@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.mirado.iot
+testFramework: junit
+sourceLanguage: java
+buildTool: gradle
+features: [ annotation-api, app-name, gradle, http-client, java, java-application, junit, kafka, log4j2, netty-server, openapi, reactor, readme, shade, yaml ]

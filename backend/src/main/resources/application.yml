@@ -1,0 +1,18 @@
+micronaut:
+  application:
+    name: iotBackend
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+      swagger-ui:
+        paths: classpath:META-INF/swagger/views/swagger-ui
+        mapping: /swagger-ui/**
+kafka.bootstrap.servers: localhost:9092
+swagger-ui:
+  enabled=true:
+mqtt:
+  client:
+    server-uri: tcp://13.53.227.93:1883
+    client-id: iot-backend
