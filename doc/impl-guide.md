@@ -80,7 +80,7 @@ what's going on by trying these:
 
 ### 2. Control the LED brightness over MQTT ###
 
-Open `charge_point_mqtt`. Have a read through of the code in charge_point_mqtt.ino. 
+Open `mqtt`. Have a read through of the code in charge_point_mqtt.ino. 
 
 Connect your MQTT client to the broker [like this](iot-mqtt-broker-settings.png):
     protocol:   either mqtt:// or tcp://
@@ -126,12 +126,11 @@ number to "authorise" your card, reupload the sketch, and run it again. This tim
   - Can you publish an mqtt message with the RFID serial number as a kind of auth request?
   - Can you subscribe to an auth response topic, and trigger the "unlock" behaviour in response to that message?
   
-### 4. Charge Point Wiring ###
+### 4. Charge Point Implementation ###
 
-Here I lay out the behaviour of the physical charge point device. I leave the wiring and implementation up to you. In 
-this first step, don't worry about communicating with the backend - just use some kind of mock to get the hardware to 
-respond correctly to e.g. start/stop charging, etc. Some of these will probably require you to look up details of how to 
-use the devices correctly online.
+Here I lay out the behaviour of the physical charge point device. I leave the wiring and implementation up to you. 
+You can take the steps in more or less any order. For each of the steps, I suggest implementing the hardware,
+and then the integration with the backend, before moving onto the next steps.
 
 #### Behaviour ####
 
@@ -157,20 +156,11 @@ Take care not to try turning the servo in the wrong direction, if, e.g. you rece
 The user can blip with their RFID tag to authorise a session start or stop. Once the authorisation is done, the session 
 immediately starts/stops.
 
-##### What else? ##### 
-
-(Optional) This is your chargepoint, embellish it however you like! Some ideas:
-
-- Spin a DC motor while charging is ongoing (simulating delivery of electricity in some way)
-- Display a friendly message to the user on an LCD screen
-- On-board weather station? 
-- Detect when a car is plugged in (by passing VCC into an input pin) and prevent session start if not
-
-### 5. IoT Charge Point Implementation ###
+#### IoT Charge Point Implementation ####
 
 Implement the chargepoint side of the MEChI protocol, and test and run it against the test backend.
 
-Suggested implementation order:
+Suggested implementation steps (which can be taken in any order):
 
 1. Publish `register` request with device id on setup.
 2. Subscribe to `wakeup` response to receive `chargepoint id` and save it.
