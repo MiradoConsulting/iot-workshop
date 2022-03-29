@@ -89,7 +89,7 @@ Connect your MQTT client to the broker [like this](iot-mqtt-broker-settings.png)
 - no username, password, or encryption.
     
 Publish an update to set the brightness of the LED:
-- topic: <device_id>/led
+- topic: `<device_id>/led`
 - payload: any integer 0 <= n <= 255
     
 Add a potentiometer into your circuit (similar to [this image](https://hackster.imgix.net/uploads/attachments/1144704/experimental_schematic_diagram_rWMevA8n2K.jpg)).
