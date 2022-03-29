@@ -88,7 +88,7 @@ Note that this protocol is _terrible_. It's built mostly to be simple to impleme
 
 The backend makes no attempt to manage or enforce state. It will let you do things like start or stop a session as many times as you like, without any coherent policy on what it will do with such things. Maybe the newest event will win, maybe oldest, maybe one will be picked arbitrarily. 
 
-In addition to this MEChI integration, there is also a RESTish interface for web/mobile applications. Its swagger is available at https://ec2-13-53-227-93.eu-north-1.compute.amazonaws.com:8080/swagger-ui
+In addition to this MEChI integration, there is also a RESTish interface for web/mobile applications. Its swagger is available at http://ec2-13-53-227-93.eu-north-1.compute.amazonaws.com:8080/swagger-ui
 
 
 
