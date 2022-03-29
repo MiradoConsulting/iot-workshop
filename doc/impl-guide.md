@@ -80,7 +80,7 @@ what's going on by trying these:
 
 ### 2. Control the LED brightness over MQTT ###
 
-Open `mqtt`. Have a read through of the code in charge_point_mqtt.ino. 
+Open the `mqtt` sketch. Have a read through of the code in charge_point_mqtt.ino. 
 
 Connect your MQTT client to the broker [like this](iot-mqtt-broker-settings.png):
     protocol:   either mqtt:// or tcp://
