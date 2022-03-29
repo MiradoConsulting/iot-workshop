@@ -141,6 +141,21 @@ Here I lay out the behaviour of the physical charge point device. I leave the wi
 You can take the steps in more or less any order. For each of the steps, I suggest implementing the hardware,
 and then the integration with the backend, before moving onto the next steps.
 
+#### IoT Charge Point Implementation ####
+
+Implement the chargepoint side of the MEChI protocol, and test and run it against the test backend.
+
+Suggested implementation steps (which can be taken in any order):
+
+1. Publish `register` request with device id on setup.
+2. Subscribe to `wakeup` response to receive `chargepoint id` and save it.
+3. Implement `auth-start` - sending an auth request when a user blips the RFID.
+   - can you make this send only once when a user blips, so the backend doesn't receive hundreds of requests every time 
+  the user blips?
+4. Subscribe to receive `start` request, and start a charging session when it arrives.
+5. Implement `auth-stop`.
+6. Subscribe to `stop` and stop a charging session when it arrives. 
+
 #### Behaviour ####
 
 ##### LEDs: #####
@@ -164,18 +179,3 @@ Take care not to try turning the servo in the wrong direction, if, e.g. you rece
 
 The user can blip with their RFID tag to authorise a session start or stop. Once the authorisation is done, the session 
 immediately starts/stops.
-
-#### IoT Charge Point Implementation ####
-
-Implement the chargepoint side of the MEChI protocol, and test and run it against the test backend.
-
-Suggested implementation steps (which can be taken in any order):
-
-1. Publish `register` request with device id on setup.
-2. Subscribe to `wakeup` response to receive `chargepoint id` and save it.
-3. Implement `auth-start` - sending an auth request when a user blips the RFID.
-   - can you make this send only once when a user blips, so the backend doesn't receive hundreds of requests every time 
-  the user blips?
-4. Subscribe to receive `start` request, and start a charging session when it arrives.
-5. Implement `auth-stop`.
-6. Subscribe to `stop` and stop a charging session when it arrives. 
