@@ -111,7 +111,7 @@ only one update for each user action? There are both hardware and software solut
   
 ### 3. RFID Reader ###
 
-Open the `mfrc522` sketch. Add the VMA405 RFID Reader device to your breadboard, and wire up the pins. The RFID Reader uses an interface called Serial Peripheral Interface (SPI) to connect to the Arduino. Each pin on the reader has its name printed on the reader, and should be wired to the following pins on the Arduino:
+Open the `mfrc522` sketch. Add the VMA405 RFID Reader device to your breadboard, and wire up the pins. The RFID Reader uses an interface called Serial Peripheral Interface (SPI) to connect to the Arduino. Each pin on the reader has its name printed on the reader board, and should be wired to the following pins on the Arduino:
 - `MOSI`: Pin 8
 - `MISO`: Pin 10
 - `SCK`: Pin 9
