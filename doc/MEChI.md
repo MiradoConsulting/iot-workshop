@@ -49,7 +49,7 @@ Stop charging (if currently charging) and release the cable, if one is plugged i
 
 This message is how the device registers itself as a chargepoint with the backend. The backend will respond with a wakeup message, informing the device of its assigned chargepoint id. 
 
-### Hearthbeat ###  
+### Heartbeat ###  
 
 - Topic: `heartbeat/{chargepoint-id}`
 - Body: `{}`
