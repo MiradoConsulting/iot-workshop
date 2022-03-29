@@ -133,7 +133,7 @@ number to "authorise" your card, reupload the sketch, and run it again. This tim
   - Copy `RFID.cpp` and `RFID.h` directly. 
   - Adapt the code from `mfrc522.ino` to fit into your mqtt program.
   - Can you publish an mqtt message with the RFID serial number as a kind of auth request?
-  - Can you subscribe to an auth response topic, and trigger the "unlock" behaviour in response to that message?
+  - Can you subscribe to an auth response topic, and trigger some "unlock" behaviour in response to that message?
   
 ### 4. Charge Point Implementation ###
 
