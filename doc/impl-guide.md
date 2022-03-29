@@ -48,7 +48,7 @@ Arduino. The wiring is a bit complex - details are in the section on setting up 
 
 ### Getting started ###
 
-Follow the guide [here](https://www.arduino.cc/en/Guide/MKR1000) for getting set up with the right IDE configuration, 
+Follow the Quickstart guide [here](https://www.arduino.cc/en/Guide/MKR1000) for getting set up with the right IDE configuration, 
 and uploading and running your first sketch to the board.
 
 ### Installing Libraries ### 
