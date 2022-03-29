@@ -129,7 +129,7 @@ number to "authorise" your card, reupload the sketch, and run it again. This tim
 
 #### Challenges ####
 
-- Try to combine the RFID reader into your `charge_point_mqtt` sketch:
+- Try to combine the RFID reader into your `mqtt` sketch:
   - Copy `RFID.cpp` and `RFID.h` directly. 
   - Adapt the code from `mfrc522.ino` to fit into your mqtt program.
   - Can you publish an mqtt message with the RFID serial number as a kind of auth request?
