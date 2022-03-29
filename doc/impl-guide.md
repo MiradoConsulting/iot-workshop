@@ -83,10 +83,10 @@ what's going on by trying these:
 Open the `mqtt` sketch. Have a read through of the code in charge_point_mqtt.ino. 
 
 Connect your MQTT client to the broker [like this](iot-mqtt-broker-settings.png):
-    protocol:   either mqtt:// or tcp://
-    host:       13.53.227.93
-    port:       1883
-    no username, password, or encryption.
+- protocol:   either mqtt:// or tcp://
+- host:       13.53.227.93
+- port:       1883
+- no username, password, or encryption.
     
 Publish an update to set the brightness of the LED:
   topic: <device_id>/led
