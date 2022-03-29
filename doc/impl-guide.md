@@ -80,24 +80,24 @@ what's going on by trying these:
 
 ### 2. Control the LED brightness over MQTT ###
 
-Open the `mqtt` sketch. Have a read through of the code in charge_point_mqtt.ino. 
+Open the `mqtt` sketch. Have a read through of the code in mqtt.ino. 
 
-Connect your MQTT client to the broker [like this](iot-mqtt-broker-settings.png):
+Connect your desktop MQTT client to the broker [like this](iot-mqtt-broker-settings.png):
 - protocol:   either mqtt:// or tcp://
 - host:       13.53.227.93
 - port:       1883
 - no username, password, or encryption.
+
+Open up `arduino_secrets.h`, and enter your SSID and password. We might need to set up access points for this. Enter the 
+MQTT host ip (`"13.53.227.93"`). In `mqtt.ino`, set the device id to some random [UUID](https://www.uuidgenerator.net), to 
+make messages to/from your device easy to find. 
     
-Publish an update to set the brightness of the LED:
+Publish an update from your MQTT client to set the brightness of the LED:
 - topic: `<device_id>/led`
 - payload: any integer 0 <= n <= 255
     
 Add a potentiometer into your circuit (similar to [this image](https://hackster.imgix.net/uploads/attachments/1144704/experimental_schematic_diagram_rWMevA8n2K.jpg)).
 The input pin from the potentiometer and the output pin to the LED should match those defined in the program.
-
-Open up `arduino_secrets.h`, and enter your SSID and password. We might need to set up access points for this. Enter the 
-MQTT host ip (`"13.53.227.93"`). In `charge_point_mqtt.ino`, set the device id to some random [UUID](https://www.uuidgenerator.net), to 
-make messages to/from your device easy to find. 
 
 Upload the sketch and test it out. Do you understand what the code is doing?
 
