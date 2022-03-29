@@ -111,8 +111,17 @@ only one update for each user action? There are both hardware and software solut
   
 ### 3. RFID Reader ###
 
-Open the `mfrc522` sketch. Add the VMA405 RFID Reader device to your breadboard, and wire up the pins. The Arduino's 
-Serial Peripheral Interface (SPI) pins are named, but the pin numbers are given in the comment at the top of `mfrc522.ino` for convenience.
+Open the `mfrc522` sketch. Add the VMA405 RFID Reader device to your breadboard, and wire up the pins. The RFID Reader uses an interface called Serial Peripheral Interface (SPI) to connect to the Arduino. Each pin on the reader has its name printed on the reader, and should be wired to the following pins on the Arduino:
+- `MOSI`: Pin 8
+- `MISO`: Pin 10
+- `SCK`: Pin 9
+- `NSS`: any pin - make sure to set which pin in the `#define SS_PIN` in mfrc522.ino 
+- `RST`: any pin - make sure to set which pin in the `#define RST_PIN` in mfrc522.ino
+- `VCC`: VCC (DO NOT USE 5V, THE RFID READER DEVICE WILL BE DAMAGED IF YOU DO SO)
+- `GND`: GND on Arduino 
+- `IRQ`: not used
+
+The Arduino's SPI pins are named, but the pin numbers are given in the comment at the top of `mfrc522.ino` for convenience.
 
 Upload the sketch, open the serial monitor, and test with the RFID tag. You should get the access denied signal, and a 
 printout in the serial monitor of your card's serial number. Update `cards[]` in the sketch with your card's serial 
