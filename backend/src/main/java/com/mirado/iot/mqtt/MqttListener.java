@@ -28,23 +28,12 @@ public class MqttListener {
     private static final Pattern AUTH_STOP_PATTERN =
             Pattern.compile("auth-stop\\/" + UUID_PATTERN);
 
-//    private final IMqttClient mqtt;
     private final ChargepointService chargepointService;
     private final SessionService sessionService;
 
     public MqttListener(ChargepointService chargepointService, SessionService sessionService) {
         this.chargepointService = chargepointService;
         this.sessionService = sessionService;
-//        mqtt = new MqttClient("tcp://localhost:1883", UUID.randomUUID().toString());
-//        mqtt.connect();
-//        mqtt.subscribe("register", (topic, msg) ->
-//                register(UUID.fromString(new String(msg.getPayload()))));
-//        mqtt.subscribe("heartbeat/+", (topic, msg) ->
-//                heartbeat(topic, msg.getPayload()));
-//        mqtt.subscribe("auth-session/+", (topic, msg) ->
-//                authSession(topic, new String(msg.getPayload())));
-//        mqtt.subscribe("auth-stop/+", (topic, msg) ->
-//                authStop(topic, new String(msg.getPayload())));
     }
 
     @Topic("register")
