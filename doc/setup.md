@@ -1,4 +1,4 @@
-# Charge Point Implementation Guide #
+# IoT Workshop Setup Guide #
 
 ## Setup ##
 
