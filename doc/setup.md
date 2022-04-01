@@ -29,6 +29,7 @@ For example:
 
 Follow the Quickstart guide [here](https://www.arduino.cc/en/Guide/MKR1000) for getting set up with the right Arduino IDE configuration, 
 and uploading and running your first sketch to the board.
+- it may be that you need to have the physical board connected to complete this step...
 
 ### Installing Libraries ### 
 
