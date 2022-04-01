@@ -92,11 +92,11 @@ Open up `arduino_secrets.h`, and enter your SSID and password. We might need to 
 MQTT host ip (`"13.53.227.93"`). In `mqtt.ino`, set the device id to some random [UUID](https://www.uuidgenerator.net), to 
 make messages to/from your device easy to find. 
     
-Publish an update from your MQTT client to set the brightness of the LED:
+2.a. Publish an update from your MQTT client to set the brightness of the LED:
 - topic: `<device_id>/led`
 - payload: any integer 0 <= n <= 255
     
-Add a potentiometer into your circuit (similar to [this image](https://hackster.imgix.net/uploads/attachments/1144704/experimental_schematic_diagram_rWMevA8n2K.jpg)).
+2.b Add a potentiometer into your circuit (similar to [this image](https://hackster.imgix.net/uploads/attachments/1144704/experimental_schematic_diagram_rWMevA8n2K.jpg)).
 The input pin from the potentiometer and the output pin to the LED should match those defined in the program.
 
 Upload the sketch and test it out. Do you understand what the code is doing?
